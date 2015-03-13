@@ -10,15 +10,10 @@ First you need to modify vasp code. If you want to calculate ideal tensile stren
 second, you should prepare input.dat and this file as below:
 
 POSCAR
-
 0.02 #strain
-
 20 #step
-
 -45.0 35.264390 0.0 # rotate Z, Y and X.
-
 1 # 1 tensile, 2 shear
-
 mpiexec -np 8 vasp.4.6
 
 The first line is the name of POSCAR. The second line is strain of distortion. The third line is total step of distortion. The fourth line is degree of rotation. This is for calculating special orientation. For example, if you want to calculating ideal strength of Diamond along 100, you just set 0.0 0.0 0.0. If you want to calculate 110 orientation, you need set -45.0 0.0 0.0. If you want to calculate 111 orientation, you need set -45.0 35.264390 0.0.
